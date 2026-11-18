@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "method": "SwaT, SwaT+AM, and SwaT-Code",
+  "snapshot_date": "2026-11-18",
+  "assets": [
+    {
+      "id": "qwen_model_set",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaTReproduction/models/qwen",
+      "recommended_path": "models/qwen",
+      "size_hint": "13 GiB",
+      "profiles": ["train", "evaluate", "resume", "am"]
+    },
+    {
+      "id": "prepared_datasets",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaTReproduction/datasets",
+      "recommended_path": "datasets",
+      "size_hint": "2.7 GiB",
+      "profiles": ["train", "evaluate", "resume", "am"]
+    },
+    {
+      "id": "canonical_evaluation_data",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/Subproblem4UnifiedReproduction/data/canonical/eval",
+      "recommended_path": "data/canonical/eval",
+      "size_hint": "part of the shared canonical data tree",
+      "profiles": ["evaluate", "am"]
+    },
+    {
+      "id": "renderer_m1",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m1_qwen3_0.6b_to_qwen3_1.7b",
+      "recommended_path": "outputs/subproblem4_original_recipe/m1_qwen3_0.6b_to_qwen3_1.7b",
+      "size_hint": "24 GiB",
+      "profiles": ["resume", "evaluate", "am", "results"]
+    },
+    {
+      "id": "renderer_m2",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m2_qwen3_0.6b_to_qwen3_4b",
+      "recommended_path": "outputs/subproblem4_original_recipe/m2_qwen3_0.6b_to_qwen3_4b",
+      "size_hint": "30 GiB",
+      "profiles": ["resume", "evaluate", "am", "results"]
+    },
+    {
+      "id": "renderer_m3",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m3_qwen3_4b_to_qwen3_0.6b",
+      "recommended_path": "outputs/subproblem4_original_recipe/m3_qwen3_4b_to_qwen3_0.6b",
+      "size_hint": "26 GiB",
+      "profiles": ["resume", "evaluate", "am", "results"]
+    },
+    {
+      "id": "am_query_transfer",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/am_query_transfer_original_recipe_v1",
+      "recommended_path": "outputs/subproblem4_original_recipe/am_query_transfer_original_recipe_v1",
+      "size_hint": "34 GiB while all intermediate checkpoints are retained",
+      "profiles": ["am", "resume", "results"]
+    },
+    {
+      "id": "swat_evaluations",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/evaluations",
+      "recommended_path": "outputs/subproblem4_original_recipe/evaluations",
+      "size_hint": "at least 351 MiB; active AM evaluation is still growing",
+      "profiles": ["results"]
+    },
+    {
+      "id": "swat_code_data",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaT-Code/data",
+      "recommended_path": "variants/SwaT-Code/data",
+      "size_hint": "about 6.2 MiB",
+      "profiles": ["code", "train"]
+    },
+    {
+      "id": "swat_code_outputs",
+      "kind": "directory",
+      "current_path": "/mnt/hd2/lewis/SwaT-Code/outputs",
+      "recommended_path": "variants/SwaT-Code/outputs",
+      "size_hint": "specialized checkpoints and evaluations",
+      "profiles": ["code", "resume", "results"]
+    }
+  ]
+}
+

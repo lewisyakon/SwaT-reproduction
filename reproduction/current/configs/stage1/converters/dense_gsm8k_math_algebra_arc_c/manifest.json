@@ -1,0 +1,23 @@
+{
+  "method": "DenseLatentCommunication",
+  "training_scheme": "original-paper two-phase training",
+  "training_data": {
+    "path": "/mnt/hd2/lewis/Subproblem4UnifiedReproduction/data/DenseLatentCommunication/train.jsonl",
+    "sha256": "dddc1704b0c75579809442e20a9e2dd8692210eeb5a2c5ade0c1bad202d149ce",
+    "rows": 12836,
+    "breakdown": {
+      "gsm8k": 7473,
+      "math_algebra": 4244,
+      "arc_c": 1119
+    }
+  },
+  "phase1": "cache reconstruction, 2000 steps",
+  "receiver_self_traces": "greedy receiver generation, thinking enabled, at most 768 new tokens",
+  "phase2": "generation objective, 2000 steps, context-aware probability 0.5",
+  "model_groups": [
+    "M1: Qwen3-0.6B -> Qwen3-1.7B",
+    "M2: Qwen3-0.6B -> Qwen3-4B",
+    "M3: Qwen3-4B -> Qwen3-0.6B"
+  ],
+  "source_code_commit": "3da62d6f27c36dee192f679900e85d49aa8c6d15"
+}

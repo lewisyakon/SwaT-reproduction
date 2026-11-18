@@ -1,0 +1,113 @@
+{
+  "schema": "swat-code-pair-v1",
+  "pair": "M1",
+  "pair_name": "m1_qwen3_0.6b_to_qwen3_1.7b",
+  "control": "Original Phase-2 recipe with only two code trace datasets appended",
+  "reused_phase1": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m1_qwen3_0.6b_to_qwen3_1.7b/stage1/exit-checkpoint-5000",
+  "original_stage2_args": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m1_qwen3_0.6b_to_qwen3_1.7b/stage2/args.json",
+  "code_datasets": [
+    "/mnt/hd2/lewis/SwaT-Code/data/mbpp_train_python_traces.jsonl",
+    "/mnt/hd2/lewis/SwaT-Code/data/codealpaca_python_7500_traces.jsonl"
+  ],
+  "resource_only_override": {
+    "preflight_max_receiver_tokens": 9391,
+    "basis": "/mnt/hd2/lewis/SwaT-Code/manifests/receiver_length_audit.json",
+    "note": "Changes only synthetic OOM preflight shapes; it does not truncate or alter training samples"
+  },
+  "training_args": {
+    "sender_model": "/mnt/hd2/lewis/SwaTReproduction/models/qwen/Qwen3-0.6B",
+    "receiver_model": "/mnt/hd2/lewis/SwaTReproduction/models/qwen/Qwen3-1.7B",
+    "datasets": [
+      "/mnt/hd2/lewis/SwaTReproduction/multiagent/data/renderer_text/pg19_wikitext103_train_4k4k_20m.jsonl",
+      "qasper+nox:train",
+      "quality+limit=2500:train",
+      "hotpotqa+limit=2500:train",
+      "musique+limit=2500:train",
+      "arc-c:train",
+      "hellaswag+limit=3000:train",
+      "winogrande+limit=3000:train",
+      "mmlu+limit=3000:auxiliary_train",
+      "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m1_qwen3_0.6b_to_qwen3_1.7b/traces/gsm8k_train_clean.jsonl",
+      "/mnt/hd2/lewis/SwaT-Code/data/mbpp_train_python_traces.jsonl",
+      "/mnt/hd2/lewis/SwaT-Code/data/codealpaca_python_7500_traces.jsonl"
+    ],
+    "exclude_answer_message": true,
+    "output_dir": "/mnt/hd2/lewis/SwaT-Code/outputs/m1_qwen3_0.6b_to_qwen3_1.7b/stage2_code_mix",
+    "limit_per_dataset": 7500,
+    "start": 0,
+    "max_length": 8192,
+    "max_trace_length": 4096,
+    "batch_size": 1,
+    "grad_accum_steps": 1,
+    "epochs": 2,
+    "max_steps": 24000,
+    "learning_rate": 3e-06,
+    "lr_scheduler": "constant",
+    "warmup_steps": 50,
+    "lr_total_steps": null,
+    "weight_decay": 0.001,
+    "max_grad_norm": 1.0,
+    "grad_skip_threshold": 0.0,
+    "arch": "v2",
+    "headwise_hidden": 2048,
+    "d_model": 1024,
+    "n_layers": 7,
+    "n_heads": 16,
+    "ffn_dim": 4096,
+    "bound_cache_stats": true,
+    "stat_calibration_batches": 8,
+    "bound_stats_exact_grad": true,
+    "no_sender_memory": false,
+    "causal_cross_attention": true,
+    "dense_batch_fraction": 0.3,
+    "dense_datasets": [
+      "/mnt/hd2/lewis/SwaTReproduction/multiagent/data/renderer_text/pg19_train_4k4k_20m.jsonl",
+      "/mnt/hd2/lewis/SwaTReproduction/multiagent/data/renderer_text/wikitext103_train_4k4k_10m.jsonl"
+    ],
+    "dense_max_length": 4096,
+    "dense_w_choices": [
+      0,
+      1,
+      4,
+      16
+    ],
+    "dense_loss": "hard",
+    "phase_schedule": "mixed",
+    "ce_batch_fraction": 1.0,
+    "ce_loss": "hard",
+    "position_mode": "interp",
+    "token_alignment": "native",
+    "downstream_eval_every": 500,
+    "downstream_eval_datasets": [
+      "qasper:validation",
+      "quality:boosted"
+    ],
+    "downstream_eval_samples": 64,
+    "downstream_eval_strides": [
+      1,
+      4
+    ],
+    "downstream_generate_samples": 64,
+    "downstream_max_new_tokens": 32,
+    "device": "cuda:0",
+    "receiver_device": "cuda:0",
+    "renderer_device": "cuda:0",
+    "report_every": 30,
+    "save_every": 4000,
+    "loss_window": 100,
+    "resume_from": null,
+    "init_weights_from": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m1_qwen3_0.6b_to_qwen3_1.7b/stage1/exit-checkpoint-5000",
+    "oom_preflight": true,
+    "preflight_max_receiver_tokens": 9391,
+    "checkpoint_receiver": true,
+    "preflight_only": false,
+    "empty_cache_every": 0,
+    "seed": 44
+  },
+  "evaluation": {
+    "dataset": "humaneval",
+    "protocol": "P4",
+    "checkpoint": "/mnt/hd2/lewis/SwaT-Code/outputs/m1_qwen3_0.6b_to_qwen3_1.7b/stage2_code_mix/exit-checkpoint-24000/renderer.pt",
+    "output_root": "/mnt/hd2/lewis/SwaT-Code/evaluations/humaneval_p4_v1"
+  }
+}

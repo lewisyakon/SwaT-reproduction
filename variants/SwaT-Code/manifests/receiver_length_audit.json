@@ -1,0 +1,41 @@
+{
+  "schema": "swat-code-receiver-length-audit-v1",
+  "pair_used_for_tokenization": "M1",
+  "tokenizer_compatibility": "All three configurations use Qwen3 tokenizers with the same vocabulary/template family",
+  "rows_scanned": 37058,
+  "max_source_length_config": 8192,
+  "max_trace_length_config": 4096,
+  "prompt_modes": {
+    "raw_continuation": 2442,
+    "split_prompt": 9821,
+    "same_prompt_continuation": 24795
+  },
+  "maximum_receiver_tokens_context_plus_decode": 9391,
+  "code_only_maxima": {
+    "receiver_context_tokens": 389,
+    "receiver_decode_tokens": 1749,
+    "receiver_total_tokens": 1779
+  },
+  "maximum_example": {
+    "dataset": "pg19_renderer",
+    "id": "pg19:train:726:221184",
+    "receiver_context_tokens": 5296,
+    "receiver_decode_tokens": 4095
+  },
+  "largest_by_dataset": {
+    "pg19_renderer": [9391, 5296, 4095],
+    "wikitext103_renderer": [8804, 4709, 4095],
+    "qasper": [8442, 8192, 250],
+    "quality": [8412, 8192, 220],
+    "musique": [7223, 7174, 49],
+    "hotpotqa": [3798, 3738, 60],
+    "codealpaca_python_train": [1779, 30, 1749],
+    "mmlu": [1028, 1020, 8],
+    "gsm8k": [706, 224, 482],
+    "mbpp_code_train": [527, 299, 228],
+    "hellaswag": [284, 276, 8],
+    "arc-c": [216, 208, 8],
+    "winogrande": [97, 89, 8]
+  },
+  "preflight_policy": "The abandoned full-rerun probe used 9391. The selected code-adaptation continuation uses max_length=512, max_trace_length=1792 and preflight_max_receiver_tokens=1779; the code-only maxima show that this truncates no code sample."
+}
