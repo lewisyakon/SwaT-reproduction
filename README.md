@@ -4,6 +4,10 @@
 > 除 SwaT 主体源码外，还包含本次 M1/M2/M3 统一测评、SwaT+AM 队列以及
 > SwaT-Code 变体。模型、数据和检查点的迁移方法见 [`MIGRATION.md`](MIGRATION.md)。
 
+已完成的原始 renderer、AM Query Transfer 和 SwaT-Code renderer 已剥离训练状态后
+通过 Git LFS 纳入 `weights/`。克隆后运行 `git lfs pull`，详情见
+`weights/manifest.json`。
+
 <div align="center">
 
 <h1>🚨SwaT🚨: Swarm Telepathy</h1>

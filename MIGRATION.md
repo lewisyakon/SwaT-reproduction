@@ -8,9 +8,17 @@
 - `variants/SwaT-Code/` 的代码数据特化配置与脚本；
 - 固定提示词、正式结果、实验计划与跨方法对比文档。
 
-模型、Hugging Face 数据、renderer/query-transfer 权重和逐样本结果不进入 Git。它们按
-用途和体积列在 `migration/external_assets.json`。其中三个正式 renderer 约 80 GiB，
-AM query-transfer 中间产物当前约 34 GiB，应作为单独资产包迁移。
+已完成的原始 renderer、AM Query Transfer 和 SwaT-Code renderer 已剥离 Adam 状态后
+通过 Git LFS 纳入 `weights/`；推理张量和 dtype 均保持不变。模型、Hugging Face
+数据、可恢复训练状态和逐样本结果仍按用途列在 `migration/external_assets.json`。
+
+克隆后执行：
+
+```bash
+git lfs install
+git lfs pull
+python tools/verify_included_weights.py
+```
 
 ## 迁移流程
 
@@ -19,6 +27,9 @@ python tools/verify_external_assets.py --mode current --profile evaluate
 python tools/verify_external_assets.py --mode current --profile am
 bash tools/create_code_bundle.sh /path/to/export
 ```
+
+Git bundle 只包含 LFS 指针，不包含权重实体；完整离线迁移还需复制 `weights/`，
+或者在有网络时从 GitHub 执行 `git lfs pull`。
 
 按 manifest 复制资产到 `recommended_path` 后：
 

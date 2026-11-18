@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-18",
+  "precision_policy": "Exact inference tensors; no dtype conversion",
+  "entries": [
+    {
+      "id": "original_M1_renderer",
+      "kind": "renderer",
+      "path": "weights/original/M1/renderer.pt",
+      "sender": "Qwen3-0.6B",
+      "receiver": "Qwen3-1.7B",
+      "parameters": 237035968,
+      "tensor_bytes": 948143872,
+      "dtypes_by_bytes": {
+        "torch.float32": 948143872
+      },
+      "file_bytes": 948189771,
+      "sha256": "bbca42c4194a24464d9ee6f70bfc63da7c81ac4fe728922e746972081af2bcd1",
+      "source_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m1_qwen3_0.6b_to_qwen3_1.7b/stage2/exit-checkpoint-24000/renderer.pt",
+      "source_file_bytes": 2844577379,
+      "dropped_training_only_keys": [
+        "optimizer_state_dict",
+        "scheduler_state_dict"
+      ],
+      "load_api": "multiagent.model.cache_renderer.load_renderer_checkpoint"
+    },
+    {
+      "id": "original_M2_renderer",
+      "kind": "renderer",
+      "path": "weights/original/M2/renderer.pt",
+      "sender": "Qwen3-0.6B",
+      "receiver": "Qwen3-4B",
+      "parameters": 287908416,
+      "tensor_bytes": 1151633664,
+      "dtypes_by_bytes": {
+        "torch.float32": 1151633664
+      },
+      "file_bytes": 1151691215,
+      "sha256": "c80ea8c1d12a657096a19ffe769d5306fb2b19ca6d89bf018dfb1f2ac9542ab2",
+      "source_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m2_qwen3_0.6b_to_qwen3_4b/stage2/exit-checkpoint-24000/renderer.pt",
+      "source_file_bytes": 3455086491,
+      "dropped_training_only_keys": [
+        "optimizer_state_dict",
+        "scheduler_state_dict"
+      ],
+      "load_api": "multiagent.model.cache_renderer.load_renderer_checkpoint"
+    },
+    {
+      "id": "original_M3_renderer",
+      "kind": "renderer",
+      "path": "weights/original/M3/renderer.pt",
+      "sender": "Qwen3-4B",
+      "receiver": "Qwen3-0.6B",
+      "parameters": 252764608,
+      "tensor_bytes": 1011058432,
+      "dtypes_by_bytes": {
+        "torch.float32": 1011058432
+      },
+      "file_bytes": 1011104267,
+      "sha256": "98c6c348f6e4af974ffde8d76d6afbe7d4130dd1559d50ba4b5eb3c640811718",
+      "source_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/m3_qwen3_4b_to_qwen3_0.6b/stage2/exit-checkpoint-24000/renderer.pt",
+      "source_file_bytes": 3033320995,
+      "dropped_training_only_keys": [
+        "optimizer_state_dict",
+        "scheduler_state_dict"
+      ],
+      "load_api": "multiagent.model.cache_renderer.load_renderer_checkpoint"
+    },
+    {
+      "id": "am-query-transfer_M1_query_transfer",
+      "kind": "query_transfer",
+      "path": "weights/am-query-transfer/M1/query_transfer.pt",
+      "sender": "Qwen3-0.6B",
+      "receiver": "Qwen3-1.7B",
+      "parameters": 117956608,
+      "tensor_bytes": 471826432,
+      "dtypes_by_bytes": {
+        "torch.float32": 471826432
+      },
+      "file_bytes": 472457491,
+      "sha256": "be55dd427a26c437ab5a6807b0518d2b89f55b1b9b8fb47206a163a7e225e297",
+      "source_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/am_query_transfer_original_recipe_v1/M1/exit-checkpoint-2000/query_transfer.pt",
+      "source_file_bytes": 1417967943,
+      "dropped_training_only_keys": [
+        "optimizer_state_dict",
+        "losses",
+        "torch_rng_state",
+        "python_random_state"
+      ],
+      "load_api": "multiagent.model.query_transfer.load_query_transfer"
+    },
+    {
+      "id": "am-query-transfer_M2_query_transfer",
+      "kind": "query_transfer",
+      "path": "weights/am-query-transfer/M2/query_transfer.pt",
+      "sender": "Qwen3-0.6B",
+      "receiver": "Qwen3-4B",
+      "parameters": 303316992,
+      "tensor_bytes": 1213267968,
+      "dtypes_by_bytes": {
+        "torch.float32": 1213267968
+      },
+      "file_bytes": 1214892243,
+      "sha256": "e095868dfaafbed7b579748da8163ef72fab472c6d9eb57b1b625395cf480cf7",
+      "source_path": "/mnt/hd2/lewis/SwaTReproduction/outputs/subproblem4_original_recipe/am_query_transfer_original_recipe_v1/M2/exit-checkpoint-2000/query_transfer.pt",
+      "source_file_bytes": 3645770808,
+      "dropped_training_only_keys": [
+        "optimizer_state_dict",
+        "losses",
+        "torch_rng_state",
+        "python_random_state"
+      ],
+      "load_api": "multiagent.model.query_transfer.load_query_transfer"
+    },
+    {
+      "id": "swat-code_M1_renderer",
+      "kind": "renderer",
+      "path": "weights/swat-code/M1/renderer.pt",
+      "sender": "Qwen3-0.6B",
+      "receiver": "Qwen3-1.7B",
+      "parameters": 237035968,
+      "tensor_bytes": 948143872,
+      "dtypes_by_bytes": {
+        "torch.float32": 948143872
+      },
+      "file_bytes": 948189067,
+      "sha256": "c3fb202492322774a5dfcaa76f60e35ce2140ec30fab2ce9c3e2932980e3282a",
+      "source_path": "/mnt/hd2/lewis/SwaT-Code/outputs/m1_qwen3_0.6b_to_qwen3_1.7b/stage2_code_adaptation/exit-checkpoint-4000/renderer.pt",
+      "source_file_bytes": 2844576675,
+      "dropped_training_only_keys": [
+        "optimizer_state_dict",
+        "scheduler_state_dict"
+      ],
+      "load_api": "multiagent.model.cache_renderer.load_renderer_checkpoint"
+    },
+    {
+      "id": "swat-code_M2_renderer",
+      "kind": "renderer",
+      "path": "weights/swat-code/M2/renderer.pt",
+      "sender": "Qwen3-0.6B",
+      "receiver": "Qwen3-4B",
+      "parameters": 287908416,
+      "tensor_bytes": 1151633664,
+      "dtypes_by_bytes": {
+        "torch.float32": 1151633664
+      },
+      "file_bytes": 1151690575,
+      "sha256": "1946801bba1a097bf49d60801ecb252b5e1aa716c2b668ad9a0727d0af2db1a5",
+      "source_path": "/mnt/hd2/lewis/SwaT-Code/outputs/m2_qwen3_0.6b_to_qwen3_4b/stage2_code_adaptation/exit-checkpoint-4000/renderer.pt",
+      "source_file_bytes": 3455085851,
+      "dropped_training_only_keys": [
+        "optimizer_state_dict",
+        "scheduler_state_dict"
+      ],
+      "load_api": "multiagent.model.cache_renderer.load_renderer_checkpoint"
+    },
+    {
+      "id": "swat-code_M3_renderer",
+      "kind": "renderer",
+      "path": "weights/swat-code/M3/renderer.pt",
+      "sender": "Qwen3-4B",
+      "receiver": "Qwen3-0.6B",
+      "parameters": 252764608,
+      "tensor_bytes": 1011058432,
+      "dtypes_by_bytes": {
+        "torch.float32": 1011058432
+      },
+      "file_bytes": 1011103627,
+      "sha256": "46be23041452de1e852144650740af0a3c443aa327719e827402690113288d4c",
+      "source_path": "/mnt/hd2/lewis/SwaT-Code/outputs/m3_qwen3_4b_to_qwen3_0.6b/stage2_code_adaptation/exit-checkpoint-4000/renderer.pt",
+      "source_file_bytes": 3033320355,
+      "dropped_training_only_keys": [
+        "optimizer_state_dict",
+        "scheduler_state_dict"
+      ],
+      "load_api": "multiagent.model.cache_renderer.load_renderer_checkpoint"
+    }
+  ],
+  "total_file_bytes": 7909318256,
+  "note": "AM M3 is absent because its query-transfer training was not complete at export time."
+}

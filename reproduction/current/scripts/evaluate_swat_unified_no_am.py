@@ -807,6 +807,8 @@ def main() -> None:
         / run_name
         / "stage2/exit-checkpoint-24000/renderer.pt"
     )
+    if args.checkpoint is None and not checkpoint.is_file():
+        checkpoint = SWAT_ROOT / "weights" / "original" / args.pair / "renderer.pt"
     if not checkpoint.is_file():
         raise FileNotFoundError(checkpoint)
 
@@ -814,6 +816,14 @@ def main() -> None:
     renderer, renderer_payload = load_renderer_checkpoint(checkpoint, args.device)
     sender_path = Path(renderer_payload["sender_model"])
     receiver_path = Path(renderer_payload["receiver_model"])
+    if not sender_path.is_dir():
+        sender_path = SWAT_ROOT / "models" / "qwen" / sender_path.name
+    if not receiver_path.is_dir():
+        receiver_path = SWAT_ROOT / "models" / "qwen" / receiver_path.name
+    if not sender_path.is_dir() or not receiver_path.is_dir():
+        raise FileNotFoundError(
+            f"model paths not found: sender={sender_path}, receiver={receiver_path}"
+        )
     dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
     sender_tokenizer = load_tokenizer(sender_path)
     receiver_tokenizer = load_tokenizer(receiver_path)

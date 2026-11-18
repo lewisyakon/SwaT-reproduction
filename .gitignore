@@ -51,3 +51,6 @@ multiagent/data/extend_context/*.jsonl
 *.arrow
 *.parquet
 *.log
+
+# Optimizer-free inference checkpoints are intentionally versioned through Git LFS.
+!weights/**/*.pt
